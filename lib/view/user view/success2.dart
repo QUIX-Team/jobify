@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jobify/constant/colors.dart';
 import 'package:jobify/widget/buttons.dart';
 
+import 'home_nav/HomeView.dart';
+
 class SuccessTwo extends StatefulWidget {
   static const id = 'Success2';
 
@@ -38,7 +40,14 @@ class _SuccessTwoState extends State<SuccessTwo> {
             const SizedBox(
               height: 100,
             ),
-            buttons(Colors.white, bottom, 'NEXT !', () {})
+            buttons(Colors.white, bottom, 'NEXT !', () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomeViewNav(
+                            currentIndexItem: 0,
+                          )));
+            })
           ],
         ),
       ),
